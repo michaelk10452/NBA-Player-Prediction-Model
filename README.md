@@ -31,12 +31,51 @@ python main.py
    - Opponent team abbreviation (3 letters, e.g., "GSW")
    - Game location ("home" or "away")
 
-3. The program will output:
+## Example Output
+
+```bash
+(venv) ➜  NBA Player Prediction Model git:(main) python3 main.py
+Enter player name: Lebron James
+Enter target points: 25
+Enter opponent team (3-letter abbreviation): PHX
+Is it a home game or away? (home/away): away
+
+[{'id': 2544, 'full_name': 'LeBron James', 'first_name': 'LeBron', 'last_name': 'James', 'is_active': True}]
+
+Average points from the last 5 games: 23.00
+
+Last 5 Games:
+      GAME_DATE      MATCHUP  PTS  REB  AST  STL  BLK
+0  OCT 26, 2024  LAL vs. SAC   32   14   10    0    1
+1  OCT 25, 2024  LAL vs. PHX   21    4    8    0    0
+2  OCT 22, 2024  LAL vs. MIN   16    5    4    0    2
+
+Last 3 Matchups with the Opponent:
+     GAME_DATE      MATCHUP  PTS  REB  AST  STL  BLK
+1   2024-10-25  LAL vs. PHX   21    4    8    0    0
+5   2024-10-06  LAL vs. PHX   19    5    4    0    2
+37  2024-02-25    LAL @ PHX   28    7   12    2    1
+
+Average points from the last 3 matchups: 22.67
+
+The model predicts Lebron James will score below 25 points.
+Cross-Validated Model Accuracy: 99.47%
+Model's Confidence in scoring above 25 points: 19.07%
+```
+
+### Understanding the Output
+
+1. **Player Verification**: Shows the matched player data from NBA database
+2. **Recent Performance**:
    - Average points from last 5 games
-   - Detailed stats from last 5 games
-   - Stats from last 3 matchups against the specified opponent
-   - Prediction whether the player will score above/below target points
-   - Model accuracy and confidence scores
+   - Detailed stats table of last 5 games including points, rebounds, assists, steals, and blocks
+3. **Head-to-Head Analysis**:
+   - Last 3 games against the specified opponent
+   - Average points in these matchups
+4. **Prediction**:
+   - Clear prediction above/below target points
+   - Model accuracy based on cross-validation
+   - Confidence percentage for scoring above target
 
 ## How It Works
 
@@ -108,3 +147,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Note
 
 This tool is for educational and entertainment purposes only. Sports betting decisions should not be made solely based on these predictions.
+
+
+Michael Kurdahi
